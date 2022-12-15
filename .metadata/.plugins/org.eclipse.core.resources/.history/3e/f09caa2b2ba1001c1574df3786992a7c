@@ -1,0 +1,13 @@
+package algo;
+
+public class testList {
+	public static void main(String[] args)
+	{
+		Linked_list head = new Linked_list(3);
+		System.out.println(head.toString());
+		head.addLast(4);
+		head.push(6);
+		System.out.println(head.toString());
+		return;
+	}
+}

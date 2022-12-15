@@ -1,0 +1,44 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class login extends JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public login()
+	{
+		setTitle("Login");
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setSize(1000,600);
+		setLayout(new GridLayout());
+		JLabel fieldNameLabel = new JLabel("Enter your Login Name");
+		JLabel fieldPasswordLabel = new JLabel("Enter your Password");
+		JTextField fieldName = new JTextField(5);
+		JTextField fieldPassword = new JTextField(5);
+		JButton submitLogin = new JButton("Login");
+		add(fieldNameLabel);
+		add(fieldName);
+		add(fieldPasswordLabel);
+		add(fieldPassword);
+		add(submitLogin);
+		
+		submitLogin.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e)
+				{
+					String tempName = fieldName.getText();
+					String Password = fieldPassword.getText();
+					//compare and creat class apropriately
+				}
+			}
+		);
+	}
+	
+	static public void main(String[] args)
+	{
+		login home = new login();
+		home.setVisible(true);
+	}
+}

@@ -1,0 +1,28 @@
+import java.sql.*;  
+public class database_connection {
+	Statement stmt;
+	Connection con;
+	ResultSet rs;
+	public ResultSet connect(String query){  
+		try{  
+			Class.forName("com.mysql.cj.jdbc.Driver");  
+			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/Attendance_System","root","");
+			//query
+			stmt=con.createStatement();  
+			rs=stmt.executeQuery(query); 
+			con.close();
+		}
+		catch(Exception e){ 
+			System.out.println(e);
+		}
+		System.out.print(rs.toString());
+		return rs;  
+	}
+	
+	public static void main(String[] args)
+	{
+		database_connection dc = new database_connection();
+		String query = "select * from module";
+		dc.connect(query);
+	}
+}

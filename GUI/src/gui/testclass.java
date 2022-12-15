@@ -1,0 +1,11 @@
+package gui;
+
+public class testclass{
+	static public void main(String[] args)
+	{
+		//Poly home = new Poly();
+		//home.renderGUI();
+		PolySwing home2 = new PolySwing();
+		home2.renderFrame();
+	}
+}

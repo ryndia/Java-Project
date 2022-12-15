@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;radix.java&apos; to &apos;algo.fibonacci.java&apos;&#x0A;- Original project: &apos;algo&apos;&#x0A;- Destination element: &apos;algo.fibonacci.java&apos;&#x0A;- Original element: &apos;radix.java&apos;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src&lt;algo{fibonacci.java" element1="/src&lt;{radix.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1654695608737" units="1" version="1.0"/>
+</session>

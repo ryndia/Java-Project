@@ -1,0 +1,51 @@
+package algo;
+
+class Linked_list {
+	Node node;
+	int length;
+	
+	public Linked_list()
+	{
+		node = null;
+		length = 0;
+	}
+	
+	public Linked_list(int d)
+	{
+		node = new Node(d);
+		length = 1;
+	}
+	
+	public void addLast(int d)
+	{
+		Node temp = this.node;
+		Node tempAdd = new Node(d);
+		while(temp.next != null)
+		{
+			temp = temp.next;
+		}
+		temp.next = tempAdd;
+		this.length++;
+	}
+	
+	public void push(int d)
+	{
+		Node temp = new Node(d);
+		temp.next = this.node;
+		this.node = temp;
+		this.length++;
+	}
+	
+	@Override
+	public String toString()
+	{
+		Node temp = this.node;
+		String output = "";
+		while(temp != null)
+		{
+			output = output + Integer.toString(temp.data) + " ";
+			temp = temp.next;
+		}
+		return output;
+	}
+}

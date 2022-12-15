@@ -1,0 +1,38 @@
+package algo;
+
+public class testList {
+	
+	public static Linked_list cumulativeSum(Linked_list in)
+	{
+		Linked_list out = new Linked_list(in.node.data);
+		int sum = 0;
+		System.out.print(in.length);
+		for(int i = 1; i < in.length; i++)
+		{
+			System.out.println(i);
+			Linked_list temp = in;
+			for(int j = 0; j<=i; j++)
+			{
+				System.out.println(j);
+				sum+=temp.node.data;
+				temp.node = temp.node.next;
+
+			}
+			out.addLast(sum);
+			sum = 0;
+		}
+		return out;
+	}
+	
+	public static void main(String[] args)
+	{
+		Linked_list head = new Linked_list(3);
+		System.out.println(head.toString());
+		head.addLast(4);
+		head.push(6);
+		System.out.println(head.toString());
+		Linked_list cSum = cumulativeSum(head);
+		System.out.println(cSum.toString());
+		return;
+	}
+}

@@ -1,0 +1,47 @@
+package gui;
+
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.*;
+
+
+public class PolySwing extends JFrame{
+	int side = 0;
+	int point = 0;
+	
+	public PolySwing()
+	{
+		renderFrame();
+	}
+	public void renderFrame()
+	{
+		new JFrame("Polygon Drawing");
+		setBackground(Color.gray);
+		setSize(400,400);
+		setVisible(true);
+		JPanel panel = new JPanel();
+		JButton enter = new JButton("Enter");
+		JLabel pointLabel = new JLabel("Enter Number of side:");
+		JLabel sideSize = new JLabel("Enter size of polygon:");
+		JTextField fieldPoint = new JTextField();
+		JTextField fieldSide = new JTextField();
+		enter.addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					String sideS = fieldSide.getText();
+					String pointS = fieldPoint.getText();
+					side = Integer.parseInt(sideS);
+					point = Integer.parseInt(pointS);
+				}
+			}
+		);
+		panel.add(pointLabel);
+		panel.add(fieldPoint);
+		panel.add(sideSize);
+		panel.add(fieldSide);
+		panel.add(enter);
+		add(panel);
+	}	
+}

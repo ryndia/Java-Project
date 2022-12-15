@@ -1,0 +1,93 @@
+package gui;
+import java.awt.*;
+import java.awt.event.*;
+import java.awt.geom.*;
+
+class test extends Frame{
+	private int score =0;
+	private String answer[] = {"pakoner","A"};
+	public test()
+	{
+		renderGui();
+	}
+
+	void renderGui()
+	{
+		setSize(400,400);
+		setLayout(new GridLayout(13, 1));
+		setVisible(true);
+		setBackground(Color.gray);
+		addWindowListener(new WindowAdapter(){
+			public void windowClosing(WindowEvent e)
+			{
+				System.exit(0);
+			}
+		});
+		Label question = new Label("who is inventor of java?");
+		Label inputAns = new Label("Your Answer: ");
+		TextField ans1 = new TextField();
+		Button sendAns1 = new Button("submit");
+		Label scoreOut = new Label("Your score: ");
+
+		sendAns1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e)
+			{
+				String scoreS = "Your score: " +Integer.toString(score);
+				String temp = ans1.getText();
+				inputAns.setText("Your Answer: "+temp);
+				if(answer[0].compareToIgnoreCase(temp) > 1)
+				{
+					score = score +3;
+					scoreOut.setText(scoreS);
+				}
+				
+				else{
+					if(score == 0){score-=1;}
+				}
+			}
+		});
+		
+	
+
+		add(question);
+		add(ans1);
+		add(sendAns1);
+		add(inputAns);
+		add(scoreOut);
+		
+		Label quizA = new Label("Response A");
+		Label quizB = new Label("Response B");
+		Label quizC = new Label("Response C");
+		Label quizD = new Label("Response D");
+		TextField ans2 = new TextField();
+		Button sendAns2 = new Button("submit");
+		Label inputAns2 = new Label("Your Answer: ");
+		
+		Label scoreOut2 = new Label("Your score: ");
+		
+		sendAns2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e)
+			{
+				String scoreS = "Your score: " +Integer.toString(score);
+				String temp2 = ans2.getText();
+				inputAns2.setText("Your Answer: "+temp2);
+				if(answer[1].compareToIgnoreCase(temp2) > 1)
+				{
+					score = score + 3;
+					scoreOut.setText(scoreS);
+				}
+				else{
+					if(score == 0){score-=1;}
+				}
+			}
+		});		
+		add(quizA);
+		add(quizB);
+		add(quizC);
+		add(quizD);
+		add(ans2);
+		add(sendAns2);
+		add(inputAns2);
+		add(scoreOut2);
+	}
+}

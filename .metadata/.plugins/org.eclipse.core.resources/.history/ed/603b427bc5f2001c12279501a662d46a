@@ -1,0 +1,25 @@
+import java.io.*;
+
+public class Filereading {
+	static void main(String[] args)
+	{
+		try {
+			FileReader rd = new FileReader("~/Desktop/phase1.csv");
+			BufferedReader br = new BufferedReader(rd);
+			String line = br.readLine();
+			while(line!=null)
+			{
+				System.out.println(line);
+				line = br.readLine();
+			}
+		}
+		catch(FileNotFoundException ex)
+		{
+			System.err.print(ex);
+		}
+		catch(Exception ex)
+		{
+			System.err.print(ex);
+		}
+	}
+}

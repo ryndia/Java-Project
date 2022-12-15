@@ -1,0 +1,27 @@
+package gui;
+import java.awt.Color;
+import java.awt.*;
+
+import javax.swing.*;
+
+
+public class PolySwing extends JFrame{
+	public PolySwing()
+	{
+		renderFrame();
+	}
+	public void renderFrame()
+	{
+		new JFrame("Polygon Drawing");
+		setBackground(Color.gray);
+		setSize(400,400);
+		setVisible(true);
+	}
+	
+	@Override
+	public void paint(Graphics g)
+	{
+		Graphics2D ga = (Graphics2D)g;
+		ga.drawRect(100,100,100,100);
+	}
+}

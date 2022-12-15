@@ -1,0 +1,9 @@
+package gui;
+
+public class testclass{
+	static public void main(String[] args)
+	{
+		Poly home = new Poly();
+		home.renderGUI();
+	}
+}
